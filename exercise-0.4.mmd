@@ -1,0 +1,9 @@
+flowchart TD
+    A["User Opens Notes Page"] --> B["Clicks 'Create New Note'"]
+    B --> C["New Note Form Opens"]
+    C --> D["User Enters Note Title"]
+    D --> E["User Enters Note Content"]
+    E --> F["Clicks Save Button"]
+    F --> G{Is Input Valid?}
+    G -- Yes --> H["Note Saved Successfully"]
+    H --> I["New Note Displayed on Page"]

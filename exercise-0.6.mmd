@@ -1,0 +1,18 @@
+flowchart TD
+    A[User Is on SPA Notes Page] --> B[Clicks 'New Note']
+    B --> C[New Note Component Rendered No Page Reload]
+    C --> D[User Enters Note Title & Content]
+    D --> E[Clicks Save Button]
+
+    E --> F[Frontend Sends POST API Request]
+    F --> G[Backend Server Receives Request]
+    G --> H[Validate Note Data]
+
+    H --> I{Is Data Valid?}
+    I -- Yes --> J[Save Note to Database]
+    J --> K[API Success Response]
+    K --> L[SPA Updates State]
+    L --> M[New Note Appears in Notes List Without Reload]
+
+    I -- No --> N[API Error Response]
+    N --> O[Display Validation Error On Same Page]
